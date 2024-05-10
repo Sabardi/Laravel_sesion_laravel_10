@@ -72,8 +72,14 @@ class SessionController extends Controller
          echo "Semua session sudah dihapus";
     }
 
-    public function flashSession(){
-
+    public function flashSession(Request $request){
+// Membuat 1 flash session menggunakan helper function
+        session()->flash('hakAkses','admin');
+        // Membuat 1 flash session menggunakan Request object
+         $request->session()->flash('hakAkses','admin');
+         // Membuat 1 flash session menggunakan facade Session
+         Session::flash('hakAkses','admin');
+         echo "Flash session hakAkses sudah dibuat";
     }
 }
 

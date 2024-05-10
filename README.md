@@ -128,3 +128,13 @@ Laravel juga menyediakan method flush() untuk menghapus semua session
          Session::forget('hakAkses');
          echo "Session hakAkses sudah dihapus";
 
+#  Flash Session
+Flash session adalah sebutan untuk session yang hanya bisa diakses 1 kali saja, setelah itu
+isinya langsung terhapus. Flash session ini sebenarnya sudah pernah kita pakai saat
+menampilkan flash data di bab CRUD.
+Untuk membuat flash session, juga bisa dengan 3 cara berikut:
+ Menggunakan function helper session()->flash(<session_name>,<session_value>)
+ Melalui method $request->session()->flash(<session_name>,<session_value>) dari
+Request object
+ Melalui method Session::flash(<session_name>,<session_value>) dari Session
+facade
